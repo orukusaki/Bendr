@@ -2,7 +2,7 @@ Bendr
 =========
 
 This is a slack bot used in the office for fairly frivolous purposes.
-Anything merged into the mater branch is deployed automagically via codeship.
+Anything merged into the master branch is deployed automagically via codeship.
 
 The bot will then listen on two routes:
 
