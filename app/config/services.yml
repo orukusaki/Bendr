@@ -14,5 +14,5 @@ services:
     arguments: ["@slack.client", "@logger"]
     tags:
       - name: kernel.event_listener
-        event: slack.command.received
+        event: slack.message.received
         method: handleMessageEvent
