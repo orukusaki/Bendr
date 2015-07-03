@@ -1,0 +1,4 @@
+orukusaki_slack:
+    resource: "@OrukusakiSlackBundle/Controller/"
+    type:     annotation
+    prefix:   /slack
