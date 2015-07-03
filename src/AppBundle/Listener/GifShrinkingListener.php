@@ -39,7 +39,7 @@ class GifShrinkingListener
             $this->shrinkThatGif($message, $event->getChannel());
 
         } catch (RuntimeException $e) {
-            $this->logger->debug($e->getMessage());
+            $this->logger->info($e->getMessage());
         }
     }
 
