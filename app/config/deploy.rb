@@ -18,7 +18,7 @@ set :use_sudo,            false
 set :webserver_user,      "www-data"
 set :permission_method,   :acl
 set :use_set_permissions, true
-set :user,                "deploy"
+set :user,                "codeship"
 
 before "symfony:cache:warmup", "symfony:composer:install"
 
