@@ -3,7 +3,7 @@ set :domain,      "orukusaki.co.uk"
 set :deploy_to,   "/var/www/slackbot"
 set :app_path,    "app"
 
-set :repository,  "git@github.com:orukusaki/Bendr.git"
+set :repository,  "https://github.com/orukusaki/Bendr.git"
 set :scm,         :git
 
 role :web,        domain                         # Your HTTP server, Apache/etc
