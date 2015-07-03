@@ -59,7 +59,7 @@ class GifShrinkingListener
 
         $transcodeData = $this->transcode($originalUrl);
 
-        $newSize = number_format($transcodeData['gfySize'] / (1 << 20), 2) . 'MB';
+        $newSize = number_format($transcodeData['gfysize'] / (1 << 20), 2) . 'MB';
 
         $url = 'http://gfycat.com/' . $transcodeData['gfyName'];
 
@@ -155,11 +155,11 @@ class GifShrinkingListener
             throw new RuntimeException("json decode failed");
         }
 
-        if (!isset($transcodeData['gfySize']) || $transcodeData['gfySize'] == 0) {
+        if (!isset($data['gfysize']) || !$data['gfysize']) {
             throw new RuntimeException("invalid size returned");
         }
 
-        if (!isset($transcodeData['gfyName']) || $transcodeData['gfyName'] == '') {
+        if (!isset($data['gfyName']) || !$data['gfyName']) {
             throw new RuntimeException("no gfyName field");
         }
 
