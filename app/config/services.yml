@@ -1,9 +1,18 @@
 # Learn more about services, parameters and containers at
 # http://symfony.com/doc/current/book/service_container.html
-parameters:
-#    parameter_name: value
-
 services:
-#    service_name:
-#        class: AppBundle\Directory\ClassName
-#        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
+  burritos_listener:
+    class: AppBundle\Listener\BurritoListener
+    arguments: ["@slack.client"]
+    tags:
+      - name: kernel.event_listener
+        event: slack.command.received
+        method: handleMessageEvent
+
+  gif_listener:
+    class: AppBundle\Listener\GifShrinkingListener
+    arguments: ["@slack.client", "@logger"]
+    tags:
+      - name: kernel.event_listener
+        event: slack.command.received
+        method: handleMessageEvent
